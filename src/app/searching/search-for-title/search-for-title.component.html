@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <div class="md-form mt-0 searchtitle">
+        <div class="input-group mb-3">
+          <input type="text" name="titel" class="form-control form-control-lg" placeholder="Search Here"  name='title' [(ngModel)]='title' >
+          <!-- <button type="submit" class="input-group-text btn-success" (click)="search(title.value)"><i class="bi bi-search me-2"></i> Search</button> -->
+      </div>
+      </div>
+      <div class="recivingData" *ngFor="let ReceivingData of ReceivingData | filter:title | paginate:{itemsPerPage:10,currentPage: p,totalItems:totalLength} ">
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%">
+          <div class="row">
+            <h5>Title:- {{ReceivingData.title}}</h5>
+            <h5>Type:- {{ReceivingData.type}}</h5>
+            <h6>Title_suggest:-{{ReceivingData.title_suggest}}</h6>
+            <h6>publish_date:-{{ReceivingData.publish_date}}</h6>
+          </div>
+        </div>
+      </div>
+      <pagination-controls class="text-center my-pagination" (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+  </div>
+</div>

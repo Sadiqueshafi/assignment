@@ -1,19 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="containt">
-      <h2>Click Image And get Another AddRow</h2>
-    </div>
-    <div class="col-md-4" *ngFor="let a of arrayOfImage">
-        <img class="image" id="image1" src={{a.url}} (click)="abc(a.url)" >
-    </div>
-  </div>
-  <div class="container" *ngIf='showImage'>
-    <div class="row">
-      <div class="col-md-12 showimage" >
-        <!-- <h1>hello world {{show}}</h1> -->
-        <img src= "{{show}}" >
-
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h2>Search item for title</h2>
+          <app-search-for-title ></app-search-for-title>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h2>Get Book Details</h2>
+            <app-get-book-details></app-get-book-details>
+        </div>
       </div>
     </div>
+
   </div>
-<router-outlet></router-outlet>
+
